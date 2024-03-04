@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the website -->
     <title>Bryant's Website</title>
+    <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Internal CSS -->
     <style>
+        /* Resetting default margin, padding, and box-sizing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body styles */
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f5f5f5;
@@ -21,6 +28,7 @@
             overflow-y: auto;
         }
 
+        /* Navigation styles */
         nav {
             position: fixed;
             top: 0;
@@ -32,15 +40,18 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        /* Navigation list styles */
         nav ul {
             list-style-type: none;
             display: flex;
         }
 
+        /* Navigation list item styles */
         nav ul li {
             margin-right: 10px;
         }
 
+        /* Navigation link styles */
         nav ul li a {
             color: #333;
             text-decoration: none;
@@ -49,14 +60,17 @@
             border-radius: 5px;
         }
 
+        /* Icon styles */
         nav ul li a i {
             margin-right: 5px;
         }
 
+        /* Navigation link hover styles */
         nav ul li a:hover {
             background-color: #eee;
         }
 
+        /* Responsive navigation */
         @media screen and (max-width: 600px) {
             nav ul {
                 flex-direction: column;
@@ -64,10 +78,12 @@
             }
         }
 
+        /* Main content styles */
         main {
             padding-top: 0;
         }
 
+        /* Section styles */
         section {
             min-height: 100vh;
             background: linear-gradient(to right, #333333, #666666);
@@ -81,10 +97,12 @@
             padding: 50px;
         }
 
+        /* Offset for subsequent sections */
         section:not(:first-child) {
             margin-top: -50px;
         }
 
+        /* Section heading styles */
         section h2 {
             margin-bottom: 20px;
             font-size: 3rem;
@@ -93,12 +111,14 @@
             padding: 10px;
         }
 
+        /* Section paragraph styles */
         section p {
             font-size: 1.2rem;
             line-height: 1.6;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
-/* Form styling */
+
+        /* Form styling */
         form {
             display: flex;
             flex-direction: column;
@@ -109,11 +129,9 @@
             width: 90%; /* Increased width */
             max-width: 800px; /* Maximum width to prevent stretching too much on larger screens */
             margin: 0 auto; /* Center the form horizontally */
-}
+        }
 
-
-        
-
+        /* Input field styles */
         form input[type="text"],
         form input[type="email"],
         form textarea {
@@ -124,6 +142,7 @@
             border-radius: 5px;
         }
 
+        /* Submit button styles */
         form input[type="submit"] {
             width: 40%;
             background-color: #007bff;
@@ -135,10 +154,12 @@
             transition: background-color 0.3s ease;
         }
 
+        /* Submit button hover styles */
         form input[type="submit"]:hover {
             background-color: #0056b3;
         }
 
+        /* Footer styles */
         footer {
             background-color: #333333;
             color: #fff;
@@ -150,6 +171,7 @@
             font-size: 0.8rem;
         }
 
+        /* Animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -161,17 +183,20 @@
             }
         }
 
+        /* About container styles */
         .about-container {
             display: flex;
             align-items: center;
             justify-content: space-around;
         }
 
+        /* Image box styles */
         .image-box {
             flex: 1;
             padding: 20px;
         }
 
+        /* Image styles */
         .image-box img {
             max-width: 100%;
             height: auto;
@@ -179,6 +204,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* Text box styles */
         .text-box {
             flex: 2;
             padding: 20px;
@@ -186,11 +212,13 @@
             border-radius: 10px;
         }
 
+        /* Text box heading styles */
         .text-box h2 {
             margin-bottom: 20px;
             font-size: 2.5rem;
         }
 
+        /* Text box paragraph styles */
         .text-box p {
             font-size: 1.2rem;
             line-height: 1.6;
@@ -198,6 +226,7 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#portfolioSection"><i class="fas fa-briefcase"></i> Home</a></li>
@@ -206,17 +235,22 @@
         </ul>
     </nav>
 
+    <!-- Main Content -->
     <main id="mainContent">
+        <!-- Portfolio Section -->
         <section id="portfolioSection" class="active">
             <h2>Welcome</h2>
             <p>Welcome to the Homepage!</p>
         </section>
 
+        <!-- About Section -->
         <section id="aboutSection">
             <div class="about-container">
+                <!-- Image Box -->
                 <div class="image-box">
-                    <img src="/Pic.JPG>
+                    <img src="path/to/your/image.jpg">
                 </div>
+                <!-- Text Box -->
                 <div class="text-box">
                     <h2>About Me</h2>
                     <div class="text-content">
@@ -228,22 +262,25 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contactSection">
-    <h2>Contact Me</h2>
-    <form action="/submit_contact" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="8" style="height: 200px;" required></textarea>
-        <input type="submit" value="Submit">
-    </form>
-</section>
-
+            <h2>Contact Me</h2>
+            <!-- Contact Form -->
+            <form action="/submit_contact" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="8" style="height: 200px;" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         &copy; 2024 Bryant's Website | All rights reserved
     </footer>
 
+    <!-- JavaScript for smooth scrolling -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const navLinks = document.querySelectorAll("nav ul li a");
