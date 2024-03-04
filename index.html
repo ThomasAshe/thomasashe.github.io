@@ -22,19 +22,17 @@
         /* Body styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5; /* Set the background color */
+            background-color: #f5f5f5;
             color: #333;
             overflow-x: hidden;
             overflow-y: auto;
-            margin: 0;
-            padding: 0;
         }
 
         /* Navigation styles */
         nav {
             position: fixed;
             top: 0;
-            right: 0;
+            right: 20px;
             z-index: 999;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
@@ -46,7 +44,6 @@
         nav ul {
             list-style-type: none;
             display: flex;
-            justify-content: flex-end;
         }
 
         /* Navigation list item styles */
@@ -63,6 +60,11 @@
             border-radius: 5px;
         }
 
+        /* Icon styles */
+        nav ul li a i {
+            margin-right: 5px;
+        }
+
         /* Navigation link hover styles */
         nav ul li a:hover {
             background-color: #eee;
@@ -70,27 +72,15 @@
 
         /* Responsive navigation */
         @media screen and (max-width: 600px) {
-            nav {
-                justify-content: center;
-                width: 100%;
-                bottom: 0;
-                left: 0;
-                border-radius: 0;
-            }
-
             nav ul {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            nav ul li {
-                margin: 5px 0;
             }
         }
 
         /* Main content styles */
         main {
-            padding-top: 60px; /* Adjusted for navigation height */
+            padding-top: 0;
         }
 
         /* Section styles */
@@ -105,6 +95,11 @@
             justify-content: center;
             align-items: center;
             padding: 50px;
+        }
+
+        /* Offset for subsequent sections */
+        section:not(:first-child) {
+            margin-top: -50px;
         }
 
         /* Section heading styles */
@@ -140,19 +135,16 @@
         form input[type="text"],
         form input[type="email"],
         form textarea {
-            width: 100%;
-            max-width: 400px;
+            width: 80%;
             padding: 10px;
             margin: 5px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box; /* Ensure consistent input field sizing */
         }
 
         /* Submit button styles */
         form input[type="submit"] {
-            width: 100%;
-            max-width: 400px;
+            width: 40%;
             background-color: #007bff;
             color: white;
             padding: 10px 20px;
@@ -160,7 +152,6 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            box-sizing: border-box; /* Ensure consistent button sizing */
         }
 
         /* Submit button hover styles */
@@ -180,18 +171,33 @@
             font-size: 0.8rem;
         }
 
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* About container styles */
         .about-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 20px; /* Add some gap between image and text box */
-            max-width: 800px; /* Limit maximum width */
-            margin: 0 auto; /* Center align on larger screens */
         }
 
         /* Image box styles */
+        .image-box {
+            padding: 20px;
+            max-width: 300px; /* Limit the maximum width of the image box */
+        }
+
+        /* Image styles */
         .image-box img {
             max-width: 100%;
             height: auto;
@@ -204,9 +210,9 @@
             padding: 20px;
             border: 2px solid #fff;
             border-radius: 10px;
-            width: 100%; /* Ensure text box takes full width */
-            max-width: 800px; /* Limit maximum width */
-            margin: 0 auto; /* Center align on larger screens */
+            max-width: 800px; /* Limit the maximum width of the text box */
+            width: 90%; /* Increased width */
+            margin-bottom: 20px; /* Added margin bottom */
         }
 
         /* Text box heading styles */
@@ -214,13 +220,30 @@
             margin-bottom: 20px;
             font-size: 2.5rem;
         }
+
+        /* Text box paragraph styles */
+        .text-box p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Media Query for image and text box positioning */
+        @media screen and (min-width: 600px) {
+            .about-container {
+                flex-direction: row; /* Display image and text box side by side */
+            }
+
+            .text-box {
+                margin-left: 20px; /* Add margin to text box */
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="#portfolioSection"><i class="fas fa-briefcase"></i> Home</a></li>
+            <li><a href="#homeSection"><i class="fas fa-briefcase"></i> Home</a></li>
             <li><a href="#aboutSection"><i class="fas fa-user"></i> About</a></li>
             <li><a href="#contactSection"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
@@ -228,8 +251,8 @@
 
     <!-- Main Content -->
     <main id="mainContent">
-        <!-- Portfolio Section -->
-        <section id="portfolioSection" class="active">
+        <!-- Home Section -->
+        <section id="homeSection" class="active">
             <h2>Welcome</h2>
             <p>Welcome to the Homepage!</p>
         </section>
