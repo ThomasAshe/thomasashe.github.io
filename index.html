@@ -221,20 +221,15 @@
             line-height: 1.6;
         }
 
-        /* Media query for image position */
-        @media screen and (min-width: 600px) {
-            .about-container {
-                flex-direction: row; /* Change to horizontal layout */
-                align-items: flex-start; /* Align items to the start */
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-
-            .image-box {
-                flex: 1; /* Take up 50% of the width */
-                padding: 0 20px; /* Add some spacing around the image */
-            }
-
-            .text-box {
-                flex: 1; /* Take up 50% of the width */
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -260,6 +255,10 @@
         <!-- About Section -->
         <section id="aboutSection">
             <div class="about-container">
+                <!-- Image Box -->
+                <div class="image-box">
+                    <img src="Pic.JPG" alt="Profile Picture">
+                </div>
                 <!-- Text Box -->
                 <div class="text-box">
                     <h2>About Me</h2>
@@ -268,10 +267,6 @@
                         but quickly realized I wanted to go more towards the computer science/IT route. I went to Chattahoochee Technical College for 2 years, where I completed most of my core classes and found a burning passion for Computer Science.
                         I then transferred to KSU where I am currently pursuing a degree in Information Technology with a concentration in Data Analytics.</p>
                     </div>
-                </div>
-                <!-- Image Box -->
-                <div class="image-box">
-                    <img src="Pic.JPG">
                 </div>
             </div>
         </section>
