@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryant's Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: 20px;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a i {
+            margin-right: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #eee;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        main {
+            padding-top: 0;
+        }
+
+        section {
+            min-height: 100vh;
+            background: linear-gradient(to right, #333333, #666666);
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        section:not(:first-child) {
+            margin-top: -50px;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            outline: 2px solid #fff;
+            padding: 10px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+/* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 50px;
+            width: 90%; /* Increased width */
+            max-width: 800px; /* Maximum width to prevent stretching too much on larger screens */
+            margin: 0 auto; /* Center the form horizontally */
+}
+
+
+        
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            width: 40%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.8rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .image-box {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-box {
+            flex: 2;
+            padding: 20px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+
+        .text-box h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .text-box p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#portfolioSection"><i class="fas fa-briefcase"></i> Home</a></li>
+            <li><a href="#aboutSection"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#contactSection"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="mainContent">
+        <section id="portfolioSection" class="active">
+            <h2>Welcome</h2>
+            <p>Welcome to the Homepage!</p>
+        </section>
+
+        <section id="aboutSection">
+            <div class="about-container">
+                <div class="image-box">
+                    <img src="/Users/bryantashe/Downloads/Pic.JPG">
+                </div>
+                <div class="text-box">
+                    <h2>About Me</h2>
+                    <div class="text-content">
+                        <p>My name is Thomas Bryant Ashe I go by my middle name Bryant and I am 21 years old. Some of my favorite hobbies, include video games, coding, and playing pickleball. I originally attended college to become a biologist, 
+                        but quickly realized I wanted to go more towards the computer science/IT route. I went to Chattahoochee Technical College for 2 years, where I completed most of my core classes and found a burning passion for Computer Science.
+                        I then transferred to KSU where I am currently pursuing a degree in Information Technology with a concentration in Data Analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contactSection">
+    <h2>Contact Me</h2>
+    <form action="/submit_contact" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="8" style="height: 200px;" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+    </main>
+
+    <footer>
+        &copy; 2024 Bryant's Website | All rights reserved
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll("nav ul li a");
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const targetId = link.getAttribute("href").substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: "smooth"
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
