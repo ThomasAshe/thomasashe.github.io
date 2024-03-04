@@ -22,12 +22,16 @@
         /* Body styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background: linear-gradient(to right, #333333, #666666);
+            color: white;
             overflow-x: hidden;
             overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-
+        
         /* Navigation styles */
         nav {
             position: fixed;
@@ -38,6 +42,8 @@
             border-radius: 10px;
             padding: 10px 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
         }
 
         /* Navigation list styles */
@@ -58,6 +64,8 @@
             transition: color 0.3s ease;
             padding: 10px;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
         }
 
         /* Icon styles */
@@ -80,42 +88,38 @@
 
         /* Main content styles */
         main {
-            padding-top: 0;
+            padding-top: 60px; /* Adjusted padding for fixed navigation */
+            padding-bottom: 50px; /* Added padding for footer */
         }
 
         /* Section styles */
         section {
-            min-height: 100vh;
-            background: linear-gradient(to right, #333333, #666666);
-            color: white;
-            font-size: 1.5rem;
+            display: none; /* Initially hide all sections */
+            padding: 40px 20px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 50px;
         }
 
-        /* Offset for subsequent sections */
-        section:not(:first-child) {
-            margin-top: -50px;
+        /* Active section */
+        .active {
+            display: block; /* Show only active section */
         }
 
         /* Section heading styles */
         section h2 {
             margin-bottom: 20px;
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             outline: 2px solid #fff;
             padding: 10px;
+            border-radius: 10px;
         }
 
         /* Section paragraph styles */
         section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.8;
         }
 
         /* Form styling */
@@ -124,29 +128,40 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 20px;
-            padding: 50px;
+            padding: 20px;
             width: 90%; /* Increased width */
-            max-width: 800px; /* Maximum width to prevent stretching too much on larger screens */
+            max-width: 500px; /* Maximum width to prevent stretching too much on larger screens */
             margin: 0 auto; /* Center the form horizontally */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Input field styles */
         form input[type="text"],
         form input[type="email"],
         form textarea {
-            width: 80%;
+            width: 100%;
             padding: 10px;
-            margin: 5px 0;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Input field focus styles */
+        form input[type="text"]:focus,
+        form input[type="email"]:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: #007bff;
         }
 
         /* Submit button styles */
         form input[type="submit"] {
-            width: 40%;
+            width: 50%;
             background-color: #007bff;
-            color: white;
+            color: #fff;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -171,18 +186,6 @@
             font-size: 0.8rem;
         }
 
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* About container styles */
         .about-container {
             display: flex;
@@ -193,13 +196,13 @@
 
         /* Image box styles */
         .image-box {
-            padding: 20px;
+            margin-top: 20px;
             max-width: 300px; /* Limit the maximum width of the image box */
         }
 
         /* Image styles */
         .image-box img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -207,30 +210,39 @@
 
         /* Text box styles */
         .text-box {
-            padding: 20px;
-            border: 2px solid #fff;
+            margin-top: 20px;
+            border: 2px solid transparent;
             border-radius: 10px;
             max-width: 800px; /* Limit the maximum width of the text box */
             width: 90%; /* Increased width */
-            margin-bottom: 20px; /* Added margin bottom */
+            padding: 20px;
+            background-color: transparent;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Text box heading styles */
         .text-box h2 {
             margin-bottom: 20px;
             font-size: 2.5rem;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
         }
 
         /* Text box paragraph styles */
         .text-box p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.8;
         }
 
         /* Media Query for image and text box positioning */
         @media screen and (min-width: 600px) {
             .about-container {
                 flex-direction: row; /* Display image and text box side by side */
+                justify-content: center;
+                align-items: flex-start;
             }
 
             .text-box {
@@ -254,7 +266,7 @@
         <!-- Home Section -->
         <section id="homeSection" class="active">
             <h2>Welcome</h2>
-            <p>This is my Portfolio, you are going to learn my passions, journey in college, and experiences!</p>
+            <p>This is my Portfolio, where you can learn about my passions, college journey, and experiences!</p>
         </section>
 
         <!-- About Section -->
@@ -265,8 +277,8 @@
                     <h2>About Me</h2>
                     <div class="text-content">
                         <p>My name is Thomas Bryant Ashe I go by my middle name Bryant and I am 21 years old. 
-                            My two favorite hobbies are to code and play video games. Video games have been my favorite thing for as long as I can remeber, and 
-                            then I introducted into coding and fell in love with it on the same level.
+                            My two favorite hobbies are to code and play video games. Video games have been my favorite thing for as long as I can remember, and 
+                            then I was introduced to coding and fell in love with it on the same level.
                             I originally attended college to become a biologist, but quickly realized I wanted to go more towards the computer science/IT route. 
                             I went to Chattahoochee Technical College for 2 years,where I completed most of my core classes and found a burning passion for Computer
                             Science.
@@ -275,7 +287,7 @@
                 </div>
                 <!-- Image Box -->
                 <div class="image-box">
-                    <img src="Pic.JPG">
+                    <img src="Pic.JPG" alt="Profile Picture">
                 </div>
             </div>
         </section>
@@ -308,11 +320,13 @@
                     event.preventDefault();
                     const targetId = link.getAttribute("href").substring(1);
                     const targetSection = document.getElementById(targetId);
+                    const sections = document.querySelectorAll('section');
 
-                    window.scrollTo({
-                        top: targetSection.offsetTop,
-                        behavior: "smooth"
+                    sections.forEach(section => {
+                        section.classList.remove('active');
                     });
+
+                    targetSection.classList.add('active');
                 });
             });
         });
