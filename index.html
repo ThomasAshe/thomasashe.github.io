@@ -188,12 +188,14 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
         }
 
         /* Image box styles */
         .image-box {
             flex: 1;
             padding: 20px;
+            max-width: 300px; /* Limit the maximum width of the image box */
         }
 
         /* Image styles */
@@ -206,10 +208,11 @@
 
         /* Text box styles */
         .text-box {
-            flex: 2;
+            flex: 1;
             padding: 20px;
             border: 2px solid #fff;
             border-radius: 10px;
+            max-width: 500px; /* Limit the maximum width of the text box */
         }
 
         /* Text box heading styles */
