@@ -186,14 +186,13 @@
         /* About container styles */
         .about-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            justify-content: center;
         }
 
         /* Image box styles */
         .image-box {
-            flex: 1;
             padding: 20px;
             max-width: 300px; /* Limit the maximum width of the image box */
         }
@@ -208,7 +207,6 @@
 
         /* Text box styles */
         .text-box {
-            flex: 1;
             padding: 20px;
             border: 2px solid #fff;
             border-radius: 10px;
