@@ -4,7 +4,7 @@ const app = express();
 const port = 3001;
 
 // Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true}));
 
 // Handle GET request for the homepage
 app.get('/', (req, res) => {
