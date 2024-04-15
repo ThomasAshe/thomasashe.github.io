@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true}));
 
 // Handle GET request for the homepage
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'BrysWeb.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Handle POST request for form submission
