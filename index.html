@@ -97,6 +97,8 @@
             display: none; /* Initially hide all sections */
             padding: 40px 20px;
             text-align: center;
+            opacity: 0; /* Initially set opacity to 0 */
+            animation: fadeIn 1s forwards; /* Apply fade-in animation */
         }
 
         /* Active section */
@@ -170,7 +172,7 @@
         }
 
         /* Submit button hover styles */
-        form input[type="submit_contact"]:hover {
+        form input[type="submit"]:hover {
             background-color: #0056b3;
         }
 
@@ -192,6 +194,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center; /* Center text content */
         }
 
         /* Image box styles */
@@ -249,6 +252,16 @@
                 margin-left: 20px; /* Add margin to text box */
             }
         }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -280,7 +293,7 @@
                             My two favorite hobbies are to code and play video games. Video games have been my favorite thing for as long as I can remember, and 
                             then I was introduced to coding and fell in love with it on the same level.
                             I originally attended college to become a biologist, but quickly realized I wanted to go more towards the computer science/IT route. 
-                            I went to Chattahoochee Technical College for 2 years,where I completed most of my core classes and found a burning passion for Computer
+                            I went to Chattahoochee Technical College for 2 years, where I completed most of my core classes and found a burning passion for Computer
                             Science.
                             I then transferred to KSU where I am currently pursuing a degree in Information Technology with a concentration in Data Analytics.</p>
                     </div>
@@ -289,6 +302,7 @@
                 <div class="image-box">
                     <img src="Pic.JPG" alt="Profile Picture">
                 </div>
+                
             </div>
         </section>
 
